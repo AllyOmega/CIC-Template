@@ -13,9 +13,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    align-items: center;
     padding: 16px 16px;
     background-color: #1F2937;
     gap: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.hamburger-menu {
+    display: none;
 }
 
 #subheader {
@@ -325,6 +336,25 @@ a, .second {
         font-size: 30px;
     }
 
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        right: 0px;
+        top: 150px;
+        background-color:#1F2937;
+        font-size: 100px;
+        width: 150px;
+        height: 150px;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+
     
 }
 
@@ -397,4 +427,10 @@ html, body {
 
 .form {
     color: black;
+}
+.nav-links.show {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
 }

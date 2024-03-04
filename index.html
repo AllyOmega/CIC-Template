@@ -12,18 +12,18 @@
 </head>
 <body>
     <div class="content">
-    <div class="header">
-        <a href="index.html"><img href="index.html" class="logo" src="img/logo.bmp" alt="Custom Italian Cabinets logo"></a>
-    
-        <li>
-            <ul> <a href="about.html">ABOUT</a> </ul>
-            <ul class="separators"> | </ul>
-            <ul> <a href="contact.html">CONTACT US</a> </ul>
-            <ul class="separators"> | </ul>
-            <ul> <a href="gallery.html">GALLERY</a> </ul>
-        </li>
-
-    </div>
+        <div class="header">
+            <a href="index.html"><img class="logo" src="img/logo.bmp" alt="Custom Italian Cabinets logo"></a>
+            <div class="hamburger-menu">☰</div>
+            <ul class="nav-links">
+                <li><a href="about.html">ABOUT</a></li>
+                <li class="separators"> | </li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li class="separators"> | </li>
+                <li><a href="gallery.html">GALLERY</a></li>
+            </ul>
+        </div>
+ 
     <div class="header second" id="subheader">
 
         <li>
@@ -114,6 +114,21 @@
     </div>
 
     <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.hamburger-menu').addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+        if (navLinks.classList.contains('show')) {
+            navLinks.style.display = 'flex';
+        } else {
+            setTimeout(() => {
+                navLinks.style.display = 'none';
+            }, 500); // Match the duration of the opacity transition
+        }
+    });
+});
+
         let index = 0;
         const images = document.querySelectorAll('.carousel-image');
         const cycleImages = () => {
