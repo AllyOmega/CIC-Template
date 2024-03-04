@@ -1,0 +1,97 @@
+/* Global Settings */
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 48px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+a {
+    text-decoration: none;
+}
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Layout Structures */
+.header, .hero-text, .info, .quote-section, .action, .footer {
+    background-color: #1F2937;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-text, .image-blocks, .action-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Typography & Buttons */
+.hero-main, .info-header, .quote, .action-header, .footer {
+    color: #f9faf8;
+    font-weight: 900;
+    text-align: center;
+}
+.image-block, .action-text {
+    font-size: 18px;
+    color: #58585a;
+}
+button, .action-button {
+    background-color: #3882f6;
+    border: none;
+    color: #e5e7eb;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+/* Components & Specific Adjustments */
+.hero-image > img, .image-block > img {
+    border-style: solid;
+    border-color: #3882f6;
+    border-radius: 8px;
+    border-width: 3px;
+    width: 100%;
+    height: auto;
+}
+.action-content div {
+    padding: 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-image {
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+    .hero-image > img {
+        margin-left: -100px; /* Adjust based on actual padding */
+        max-width: none;
+        width: calc(100% + 2 * 100px); /* Adjust based on actual padding */
+    }
+    .hero-text {
+        padding: 96px 20px;
+    }
+    .action-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    button {
+        align-self: normal;
+    }
+}
