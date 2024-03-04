@@ -15,7 +15,7 @@ body {
     justify-content: space-around;
     padding: 16px 16px;
     background-color: #1F2937;
-    gap: 20px;
+    gap: 50px;
 }
 
 #subheader {
@@ -103,9 +103,7 @@ body {
 }
 
 .logo {
-    color: #f9faf8;
-    font-size: 24px;
-    font-weight: 900;
+    width: 160px;
 }
 
 .hero-image {
@@ -164,8 +162,7 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 16px;
-    /* padding: 0 100px; */
-    align-self: center;
+   /*  align-self: center; */
 }
 
 
@@ -249,10 +246,6 @@ a, .second {
     font-size: 18px;
 }
 
-.logo {
-    width: 150px;
-}
-
 @media (max-width: 768px) {
     .hero-image {
         flex-basis: 100%; /* Take full width on smaller screens */
@@ -266,22 +259,38 @@ a, .second {
         height: auto; /* To maintain the aspect ratio of the image */
     }
     
+    .action {
+        margin: 0;
+        border-radius: 0;
+    }
+
     .action-content {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        gap: 50px;
     }
 
     .hero-text{
 
-        padding: 96px 20px;
+        padding: 50px 20px;
         justify-content: center;
     
+    }
+
+    .quote-section {
+        padding: 50px 50px;
     }
 
     button {
         align-self: normal;
     }
+    .header {
+        justify-content: space-evenly;
+        
+    }
+
+    
 }
 
 .about {
@@ -291,6 +300,8 @@ a, .second {
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
