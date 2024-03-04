@@ -359,6 +359,10 @@ a, .second {
         display: block;
     }
 
+    .about-content {
+        padding: 50px 25px;
+    }
+
     
 }
 
