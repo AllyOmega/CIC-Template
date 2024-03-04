@@ -30,8 +30,12 @@ body {
 }
 
 #subheader {
-    background-color: gray
-    ;
+    background-color: gray;
+    justify-content: center;
+}
+
+#subheader > li {
+    justify-content: center;
 }
 
 .hero-text{
