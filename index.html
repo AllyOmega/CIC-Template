@@ -17,7 +17,9 @@
     
         <li>
             <ul> <a href="about.html">ABOUT</a> </ul>
+            <ul class="separators"> | </ul>
             <ul> <a href="contact.html">CONTACT US</a> </ul>
+            <ul class="separators"> | </ul>
             <ul> <a href="gallery.html">GALLERY</a> </ul>
         </li>
 
@@ -46,7 +48,12 @@
         </div>
     
         <div class="hero-image"> 
-            <img src="img/splash.bmp" alt="image of friendly consultant speaking with customer about Custom Italian Cabinet products">
+            <div class="carousel">
+                
+                <img src="gallery/splash.bmp" alt="image of friendly consultant speaking with customer about Custom Italian Cabinet products" class="carousel-image active">
+                <img src="gallery/blue-white-kitchen.bmp"  alt="image of beautiful blue and white kitchen with custom cabinets" class="carousel-image">
+                <img src="gallery/marble-kitchen.bmp" alt="image of beatiful marble kitchen with custom cabinets" class="carousel-image">
+            </div>
         </div>
     </div>
     <div class="info">
@@ -87,8 +94,9 @@
     <div class="action">
         <div class="action-content">
             <div>
-                <p class="action-header"> Contact us for a Free Consultation </p>
-                <p class="action-text"> Come to our office for a <strong> Virtual Reality Presentation! </strong> </p>
+                <p class="action-header"> Contact us for a <strong>Free Consultation</strong></p>
+                <p class="action-text"> Come to our office for a <strong> Virtual Reality Presentation </strong> 
+                and see what your space would look like after a remodel!</p>
             </div>
             <div>
                 <button class="action-button">Contact Us</button>
@@ -99,6 +107,18 @@
     <div class="footer">
        Copyright © Custom Italian Cabinets 2024
     </div>
+
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll('.carousel-image');
+        const cycleImages = () => {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        };
+        setInterval(cycleImages, 3000); // Rotate images every 3 seconds
+    </script>
+    
 
 </body>
 </html>

@@ -12,7 +12,7 @@ body {
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 16px 16px;
     background-color: #1F2937;
     gap: 50px;
@@ -108,17 +108,29 @@ body {
 
 .hero-image {
     flex: 1;
-    flex-basis: 40%;
+    flex-basis: 45%;
     max-width: 600px;
-    
+    position: relative;
  
 }
+.carousel {
+    display: grid;
+}
 
-.hero-image > img {
-    
-    width: 100%; /* Makes the image responsive within the container */
-    height: auto; /* Maintains the aspect ratio of the image */
+.carousel-image {
+    width: 100%;
+    height: auto;
+    grid-area: 1 / 1 / 2 / 2; /* All images in the same area */
+    opacity: 0;
+    opacity: 0; /* Start with images transparent */
+    visibility: hidden; /* Hide images */
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* Transition for opacity and delay hiding */
+}
 
+.carousel-image.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease; /* Apply transition to opacity */
 }
 
 .quote-section {
@@ -199,6 +211,10 @@ body {
     margin: 0;
 }
 
+.action-header strong {
+    font-weight: 800; /* Choose a value that makes it noticeably bolder than the surrounding text */
+}
+
 .action-button {
     border-radius: 8px;
     border: solid;
@@ -241,6 +257,12 @@ button {
 
 }
 
+button:hover, a:hover {
+    background-color: #ffffff; /* Darker on hover for contrast */
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
 a, .second {
     color: #e5e7eb;
     font-size: 18px;
@@ -252,12 +274,12 @@ a, .second {
         min-width: 100%;
     }
 
-    .hero-image > img {
+    .carousel-image {
         width: calc(100% + 2 * 20px); /* Adjust the 96px based on the actual padding of .hero-text */
         max-width: none; /* Override any max-width set on the image */
         margin-left: -20px; /* Adjust the margin to offset the padding on the .hero-text */
         height: auto; /* To maintain the aspect ratio of the image */
-    }
+    } 
     
     .action {
         margin: 0;
@@ -273,7 +295,7 @@ a, .second {
 
     .hero-text{
 
-        padding: 50px 20px;
+        padding: 50px 20px 0px 20px;
         justify-content: center;
     
     }
@@ -288,6 +310,10 @@ a, .second {
     .header {
         justify-content: space-evenly;
         
+    }
+
+    .separators {
+        display: none;
     }
 
     
@@ -308,4 +334,21 @@ a, .second {
 html, body {
     height: 100%;
     margin: 0;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-color:#1F2937; /* Light background for the about section */
+    margin: 20px 20px; /* Add some margin for spacing */
+    padding: 20px; /* Add padding inside the about section */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    gap: 20px;
+    max-width: 800px;
+}
+
+.about p {
+    color:#e5e7eb;
+    padding: 0px 100px;
 }
