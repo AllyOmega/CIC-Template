@@ -90,10 +90,10 @@ body {
 }
 
 .image-block > img {
-    border-style: solid;
+    /* border-style: solid;
     border-color:#3882f6;
     border-radius: 8px;
-    border-width: 3px;
+    border-width: 3px; */
     max-width: 150px;
     
     
