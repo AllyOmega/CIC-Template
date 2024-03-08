@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './public/src/index.js', // e.g., ./src/index.js
+  entry: './src/index.js', // e.g., ./src/index.js
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
@@ -17,7 +17,7 @@ module.exports = {
         },
         
       },
-      {
+       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // e.g., ./public/index.html
+      template: './index.html', // e.g., ./public/index.html
     }),
   ],
   resolve: {

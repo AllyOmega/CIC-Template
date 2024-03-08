@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/style.css'; // assuming style.css is in the same directory or adjust the path accordingly
+import '../css/style.css'; // assuming style.css is in the same directory or adjust the path accordingly
 
 function Footer() {
   return (

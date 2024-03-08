@@ -3,7 +3,7 @@ import Header from './Header'; // Adjust the import paths if necessary
 import Footer from './Footer';
 // Import images - replace with correct relative paths
 import splashImage from '../img/splash.bmp';
-import blueWhiteKitchenImage from '../img/path-to-your-image/blue-white-kitchen.bmp';
+import blueWhiteKitchenImage from '../gallery/blue-white-kitchen.bmp';
 import marbleKitchenImage from '../gallery/marble-kitchen.bmp';
 import lioherImage from '../img/lioher.bmp';
 import handshakeImage from '../img/handshake.bmp';
@@ -13,7 +13,6 @@ import ecofriendlyImage from '../img/ecofriendly.bmp';
 function Home() {
   return (
     <div>
-      <Header />
       <div className="hero-text">
         <div className="hero-content">
           <div className="hero-main">
@@ -82,7 +81,6 @@ function Home() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

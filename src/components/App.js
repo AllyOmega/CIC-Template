@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home'; // as an example of a main content component
@@ -6,14 +7,15 @@ import Home from './Home'; // as an example of a main content component
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
       <main>
-        <Home /> {/* Main content of your app */}
+        <Home />
       </main>
       <Footer />
-    </>
+    </Router>
   );
 }
+
 
 export default App;

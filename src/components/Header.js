@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // assuming you're using React Router for navigation
 import '../css/style.css'; // assuming style.css is in the same directory or adjust the path accordingly
 
+import logo from '../img/logo.bmp';
+
+
 function Header() {
   return (
     <>
       <div className="header">
         <Link to="/">
-          <img className="logo" src="/img/logo.bmp" alt="Custom Italian Cabinets logo" />
+          <img className="logo" src={logo} alt="Custom Italian Cabinets logo" />
         </Link>
         <div className="hamburger-menu">☰</div>
         <ul className="nav-links">
