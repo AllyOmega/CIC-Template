@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js', // e.g., ./src/index.js
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'build'), // Change this to 'build'
     filename: 'bundle.js',
+    publicPath: '/' // Add this to ensure assets are served correctly on sub-paths
   },
   module: {
     rules: [
@@ -15,9 +16,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-        
       },
-       {
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -29,15 +29,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // e.g., ./public/index.html
+      template: './public/index.html',
+      filename: 'index.html', // Ensure the filename is set to 'index.html'
     }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  devServer: {
-    static: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000, // You can change this port number
-  },
+  // Remove the devServer configuration for production builds
 };
+;
