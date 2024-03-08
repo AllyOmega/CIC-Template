@@ -1,22 +1,17 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.set('view engine', 'ejs');
-app.use(express.static('public')); // Serve static files from the "public" directory
+// Serve static files from the React app build directory
+app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', (req, res) => {
-    res.render('index', { title: 'Home Page' }); // Example for the home page
-});
-
-app.get('/about', (req, res) => {
-    res.render('about', { title: 'About Us' }); // Assuming you want to pass a title to your EJS template
-  });
-
-app.get('/contact', (req, res) => {
-res.render('contact', { title: 'Contact Us' }); // Assuming you want to pass a title to your EJS template
+// Handles any requests that don't match the ones above,
+// so React Router can handle them on the client side
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
