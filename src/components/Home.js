@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header'; // Adjust the import paths if necessary
 import Footer from './Footer';
+import { Link } from 'react-router-dom'; // assuming you're using React Router for navigation
 // Import images - replace with correct relative paths
 import splashImage from '../img/splash.bmp';
 import blueWhiteKitchenImage from '../gallery/blue-white-kitchen.bmp';
@@ -10,9 +11,12 @@ import handshakeImage from '../img/handshake.bmp';
 import designImage from '../img/design.bmp';
 import ecofriendlyImage from '../img/ecofriendly.bmp';
 
-function Home() {
+function Home({ menuOpen }) {
+
+  console.log("Menu Open:", menuOpen);
+  
   return (
-    <div>
+    <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
       <div className="hero-text">
         <div className="hero-content">
           <div className="hero-main">

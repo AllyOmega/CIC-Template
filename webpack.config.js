@@ -27,6 +27,12 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    static: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080, // Use the same port as your error messages
+    historyApiFallback: true, // Important for SPA routing
+  },  
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
