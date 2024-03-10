@@ -1,14 +1,26 @@
 import React from 'react';
 import splashImage from '../gallery/splash.bmp'; // Adjust the path as needed
 
-function About() {
+function About( {menuOpen}) {
+
+  const videoUrl = "https://cdn.shopify.com/videos/c/vp/4c78b5e60d244eb5a7cfa861b08f9c6e/4c78b5e60d244eb5a7cfa861b08f9c6e.HD-1080p-2.5Mbps-15305118.mp4";
     return (
-        <div>
-            <div className="about-image-container">
+        <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
+{/*             <div className="about-image-container">
                 <img className="about-img" src={splashImage} alt="About Custom Italian Cabinets" />
                 <div className="overlay-text">About Custom Italian Cabinets</div>
+            </div> */}
+            <div className="video-overlay">
+                <video className="about-video" autoPlay muted loop playsInline>
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="video-text-overlay">
+                    <h2>Custom Italian Cabinets</h2>
+                    <p>FOR EVERY STYLE AND ANY BUDGET</p>
+                    <a href="/pages/estimator" className="learn-more-button">LEARN MORE</a>
+                </div>
             </div>
-
             <div className="about-content">
                 <div className="about-text">
                     <p>

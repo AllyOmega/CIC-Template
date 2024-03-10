@@ -40,7 +40,7 @@ function Home({ menuOpen }) {
       </div>
       <div className="info">
         <div className="info-header">
-          The Premiere South Florida Cabinet Installer
+          WHY CUSTOM ITALIAN CABINETS?
         </div>
         <div className="image-blocks">
           <div className="image-block">

@@ -21,7 +21,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home menuOpen = {menuOpen}/>} />
-          <Route path="/About" element={<About />} />
+          <Route path="/About" element={<About menuOpen={menuOpen}/>} />
           <Route path="/ContactForm"  element={<ContactForm />} />
           {/* Define other routes here */}
         </Routes>
