@@ -24,7 +24,7 @@ function Home({ menuOpen, videoUrl}) {
       </video>
         <div className="video-text-overlay">
             <h2>Custom Italian Cabinets</h2>
-            <p>FOR EVERY STYLE AND ANY BUDGET</p>
+            <p>FOR EVERY STYLE AND BUDGET</p>
             <a href="/pages/estimator" className="learn-more-button">LEARN MORE</a>
           </div>
     </div>
