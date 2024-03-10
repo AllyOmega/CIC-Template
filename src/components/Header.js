@@ -17,7 +17,7 @@ function Header({ toggleMenu, menuOpen }) {
       <div className="header">
         <div className='header-content'>
           <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
-          <div>
+          <div style={{height: '160px'}}>
           <Link to="/"> <img className="logo" src={logo} alt="Custom Italian Cabinets logo" /> </Link>
           </div>
         </div>      

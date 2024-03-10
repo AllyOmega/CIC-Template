@@ -24,10 +24,8 @@ function Home({ menuOpen }) {
           </div>
           <div className="second">
             CIC Design & Manufacture uses the experience gained over 
-            its 17 Years of working on Italian Mega Yachts in South Florida 
-            towards making Affordable Modern Kitchen Cabinets, Vanities, and Closets.
+            its 17 Years towards making Luxury Modern Kitchen Cabinets, Vanities, and Closets.
           </div>
-          <button>Sign up</button>
         </div>
     
         <div className="hero-image">

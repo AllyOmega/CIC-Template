@@ -18,7 +18,7 @@ body {
     align-items: center;
     padding-top: 20px;
     background-color: #f1f0ee;
-    gap: 50px;
+    gap: 30px;
 }
 
 
@@ -62,7 +62,7 @@ body {
 .hero-text{
     display: flex;
     padding: 96px 100px;
-    background-color: #34455d;
+    background-color:#FFFFFF;
     gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
@@ -72,7 +72,8 @@ body {
 .hero-main {
     font-size: 48px;
     font-weight: 900;
-    color: #f9faf8;
+    color: #39465e;
+    margin-bottom: 50px;
 
     
 }
@@ -122,7 +123,7 @@ body {
 }
 
 .info {
-    padding: 80px 20px;
+    padding: 50px 20px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -183,7 +184,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:  20px 20px 50px 20px;
+    margin:  40px 40px 0px 40px;
 }
 
 
@@ -214,12 +215,12 @@ body {
 }
 
 .action {
-    margin-top: 80px;
     margin-bottom: 80px;
+    margin-left: 40px;
+    margin-right: 40px;
     background-color: #34455d;
     display: flex;
     justify-content: center;
-    border-radius: 16px;
     align-self: center;
 }
 
@@ -286,9 +287,7 @@ ul, li {
     flex-wrap: wrap;
 }
 
-a {
-    text-decoration: none;
-}
+
 
 button {
 
@@ -311,10 +310,16 @@ button:hover, a:hover {
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 
 }
-
-a, .second {
-    color: #e5e7eb;
+a {
+    text-decoration: none;
     font-size: 18px;
+}
+
+.second {
+    color: #b06b41;
+    font-size: 24px;
+    letter-spacing: 0.03cm;
+    margin-bottom: 50px;
 }
 
 .logo {
@@ -385,6 +390,8 @@ a, .second {
     .action {
         margin: 0;
         border-radius: 0;
+            margin-left: 20px;
+            margin-right: 20px
     }
 
     .action-content {
@@ -428,19 +435,21 @@ a, .second {
 
     .about-content {
         padding: 50px 25px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .nav-links {
         display: flex;
         position: relative;
         width: 100%;
-        background-color:white;
+        background-color:#f1f0ee;
         transition: opacity 0.7s ease-in-out;
         opacity: 1;
         visibility: visible;
         flex-direction: column;
         gap: 25px; /* Adjust based on your design */
-        padding: 20px 0; /* Add some padding */
+        padding: 0px 0px 20px 0; /* Add some padding */
         top: 0; /* Start right below the header */
         left: 0;
         z-index: 0;
@@ -499,6 +508,12 @@ a, .second {
         width: 100%;
         height: 100%;
     }
+
+    .quote-section {
+        margin-left: 20px; 
+        margin-right: 20px;
+    }
+        
 }
 
 @media (max-width: 360px)    {
