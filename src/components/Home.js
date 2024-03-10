@@ -11,20 +11,32 @@ import handshakeImage from '../img/handshake.bmp';
 import designImage from '../img/design.bmp';
 import ecofriendlyImage from '../img/ecofriendly.bmp';
 
-function Home({ menuOpen }) {
+function Home({ menuOpen, videoUrl}) {
 
   console.log("Menu Open:", menuOpen);
   
   return (
-    <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
+   <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
+   <div className="video-overlay">
+    <video className="about-video" autoPlay muted loop playsInline>
+      <source src={videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+      </video>
+        <div className="video-text-overlay">
+            <h2>Custom Italian Cabinets</h2>
+            <p>FOR EVERY STYLE AND ANY BUDGET</p>
+            <a href="/pages/estimator" className="learn-more-button">LEARN MORE</a>
+          </div>
+    </div>
+
       <div className="hero-text">
         <div className="hero-content">
           <div className="hero-main">
             Welcome to Custom Italian Cabinets
           </div>
           <div className="second">
-            CIC Design & Manufacture uses the experience gained over 
-            its 17 Years towards making Luxury Modern Kitchen Cabinets, Vanities, and Closets.
+          CIC Design & Manufacture uses the experience gained over its 17 Years 
+          towards making Luxury Modern Kitchen Cabinets, Vanities, and Closets.
           </div>
         </div>
     

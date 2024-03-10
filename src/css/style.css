@@ -1,5 +1,5 @@
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'GT Walsheim Pro', sans-serif;
     font-size: 48px;
     margin: 0;
     padding: 0;
@@ -33,7 +33,7 @@ body {
     align-content: center;
     width: 100%;
 
-    max-width: 1500px;
+    max-width: 2000px;
 
 }
 
@@ -374,7 +374,7 @@ a {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .hero-image {
         flex-basis: 100%; /* Take full width on smaller screens */
         min-width: 100%;
@@ -501,7 +501,7 @@ a {
     }
 
     .video-overlay {
-        padding-top: 25%;
+        padding-top: 30%;
     }
 
     .about-video {

@@ -1,9 +1,9 @@
 import React from 'react';
 import splashImage from '../gallery/splash.bmp'; // Adjust the path as needed
 
-function About( {menuOpen}) {
+function About( {menuOpen, videoUrl}) {
 
-  const videoUrl = "https://cdn.shopify.com/videos/c/vp/4c78b5e60d244eb5a7cfa861b08f9c6e/4c78b5e60d244eb5a7cfa861b08f9c6e.HD-1080p-2.5Mbps-15305118.mp4";
+  
     return (
         <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
 {/*             <div className="about-image-container">

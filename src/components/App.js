@@ -9,7 +9,7 @@ import ContactForm from './ContactForm';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const videoUrl = "https://cdn.shopify.com/videos/c/vp/4c78b5e60d244eb5a7cfa861b08f9c6e/4c78b5e60d244eb5a7cfa861b08f9c6e.HD-1080p-2.5Mbps-15305118.mp4";
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -20,8 +20,8 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Home menuOpen = {menuOpen}/>} />
-          <Route path="/About" element={<About menuOpen={menuOpen}/>} />
+          <Route path="/" element={<Home menuOpen = {menuOpen} videoUrl = {videoUrl}/>} />
+          <Route path="/About" element={<About menuOpen={menuOpen} videoUrl = {videoUrl}/>} />
           <Route path="/ContactForm"  element={<ContactForm />} />
           {/* Define other routes here */}
         </Routes>
