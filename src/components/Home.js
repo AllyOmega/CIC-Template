@@ -3,7 +3,7 @@ import Header from './Header'; // Adjust the import paths if necessary
 import Footer from './Footer';
 import { Link } from 'react-router-dom'; // assuming you're using React Router for navigation
 // Import images - replace with correct relative paths
-import splashImage from '../img/splash.bmp';
+import splashImage from '../gallery/splash.bmp';
 import blueWhiteKitchenImage from '../gallery/blue-white-kitchen.bmp';
 import marbleKitchenImage from '../gallery/marble-kitchen.bmp';
 import lioherImage from '../img/lioher.bmp';
@@ -41,9 +41,10 @@ function Home({ menuOpen, videoUrl}) {
         </div>
     
         <div className="hero-image">
-          <div className="carousel">                
-            <img src={splashImage} alt="image of friendly consultant speaking with customer about Custom Italian Cabinet products" className="carousel-image active" />
-            <img src={blueWhiteKitchenImage} alt="image of beautiful blue and white kitchen with custom cabinets" className="carousel-image" />
+          <div className="carousel"> 
+            <img src={blueWhiteKitchenImage} alt="image of beautiful blue and white kitchen with custom cabinets" className="carousel-image" />               
+            <img src={splashImage} alt="image of friendly consultant speaking with customer about Custom Italian Cabinet products" className="carousel-image active" /> 
+            
             <img src={marbleKitchenImage} alt="image of beautiful marble kitchen with custom cabinets" className="carousel-image" />
           </div>
         </div>

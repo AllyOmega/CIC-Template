@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Home from './Home'; // Your Home component
 import About from './About'; // Your About component
 import ContactForm from './ContactForm';
+import Gallery from './Gallery'
 // Import other components
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home menuOpen = {menuOpen} videoUrl = {videoUrl}/>} />
           <Route path="/About" element={<About menuOpen={menuOpen} videoUrl = {videoUrl}/>} />
-          <Route path="/ContactForm"  element={<ContactForm />} />
+          <Route path="/ContactForm"  element={<ContactForm menuOpen={menuOpen}/>} />
+          <Route path="/Gallery" element= {<Gallery menuOpen={menuOpen}/>} />
           {/* Define other routes here */}
         </Routes>
       </main>

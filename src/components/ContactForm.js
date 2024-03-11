@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-function ContactForm() {
+function ContactForm({ menuOpen }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,13 +17,41 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., via an API call
-    console.log(formData);
-    // After submission, you might want to clear the form or give feedback to the user
+
+    fetch('/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Network response was not ok.');
+    })
+    .then(data => {
+      console.log('Success:', data);
+      // Reset form or show a success message
+      setFormData({
+        name: '',
+        email: '',
+        message: 'how can we serve you',
+      });
+      // Optionally, inform the user that the email was successfully sent
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      // Handle or display the error
+      // Optionally, inform the user about the error
+    });
   };
+
 
   return (
     <>
+        <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" required onChange={handleChange} value={formData.name} />
@@ -54,6 +82,7 @@ function ContactForm() {
         <p>Friday: 9am - 6pm</p>
         <p>Saturday: 9am - 12pm</p>
         <p>Sunday: Closed</p>
+      </div>
       </div>
     </>
   );

@@ -6,10 +6,7 @@ function About( {menuOpen, videoUrl}) {
   
     return (
         <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
-{/*             <div className="about-image-container">
-                <img className="about-img" src={splashImage} alt="About Custom Italian Cabinets" />
-                <div className="overlay-text">About Custom Italian Cabinets</div>
-            </div> */}
+
             <div className="video-overlay">
                 <video className="about-video" autoPlay muted loop playsInline>
                     <source src={videoUrl} type="video/mp4" />
@@ -44,6 +41,12 @@ function About( {menuOpen, videoUrl}) {
                     </p>
                 </div>
             </div>
+
+            <div className="about-image-container middle">
+                  <img className="about-img" src={splashImage} alt="About Custom Italian Cabinets" />
+                  <div className="overlay-text">About Custom Italian Cabinets</div>
+                </div>
+
             <div className="action">
                 <div className="action-content">
                     <div>
