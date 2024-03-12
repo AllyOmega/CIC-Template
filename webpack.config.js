@@ -28,7 +28,7 @@ module.exports = {
     ],
   },
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'build'),
     compress: true,
     port: 8080, // Use the same port as your error messages
     historyApiFallback: true, // Important for SPA routing

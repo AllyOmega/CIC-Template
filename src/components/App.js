@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './Home'; // Your Home component
@@ -16,7 +16,7 @@ function App() {
   };
 
   return (
-    <Router>
+ <>
       <Header toggleMenu={toggleMenu} menuOpen={menuOpen}/>
 
       <main>
@@ -29,7 +29,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </Router>
+</>
   );
 }
 
