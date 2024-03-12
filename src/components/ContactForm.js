@@ -18,7 +18,7 @@ function ContactForm({ menuOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('/send-email', {
+    fetch(`http://${process.env.HOSTNAME}:${process.env.PORT}/send-email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
