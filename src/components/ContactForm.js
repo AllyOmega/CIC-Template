@@ -37,7 +37,7 @@ function ContactForm({ menuOpen }) {
       setFormData({
         name: '',
         email: '',
-        message: 'how can we serve you',
+        message: 'how can we serve you?',
       });
       // Optionally, inform the user that the email was successfully sent
     })
@@ -51,11 +51,16 @@ function ContactForm({ menuOpen }) {
 
   return (
     <>
-        <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
+    <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
+      <div className = "contact">
+        
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" name="name" required onChange={handleChange} value={formData.name} />
         
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" required onChange={handleChange} value={formData.email} />
+      
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" name="email" required onChange={handleChange} value={formData.email} />
         
@@ -65,10 +70,13 @@ function ContactForm({ menuOpen }) {
         <button type="submit">Send</button>
       </form>
       
-      <div className="quote-section">
+      <div className="contact-section">
         <h2>Contact Information</h2>
-        <p><strong>Phone:</strong> (954) 594-4641</p>
-        <p><strong>Email:</strong> info@customitaliancabinets.com</p>
+        <p><strong>Phone:</strong> <a href="tel:+19545944641">(954) 594-4641</a>
+</p>
+        <p class="contact-email"><strong>Email:</strong> <a href="mailto:info@customitaliancabinets.com">info@&#8203;customitaliancabinets.com
+        </a></p>
+          
         <p><strong>Address:</strong><br />
             5405 NW 102nd Avenue<br />
             Unit 208<br />
@@ -82,6 +90,7 @@ function ContactForm({ menuOpen }) {
         <p>Friday: 9am - 6pm</p>
         <p>Saturday: 9am - 12pm</p>
         <p>Sunday: Closed</p>
+      </div>
       </div>
       </div>
     </>
