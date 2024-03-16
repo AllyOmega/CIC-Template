@@ -48,13 +48,13 @@ const transporter = nodemailer.createTransport({
 
 // Email sending route
 app.post('/send-email', async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, phone, message } = req.body;
 
   let mailOptions = {
-    from: '"Your Name" <youremail@example.com>',
+    from: '"Custom Italian Cabinets" <youremail@example.com>',
     to: 'baseballwilliam@gmail.com',
     subject: 'New Contact Form Submission',
-    text: `You have a new submission from ${name} (${email}): ${message}`,
+    text: `You have a new submission from ${name} (${email}) with phone number ${phone}: ${message}`,
   };
 
   try {

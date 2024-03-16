@@ -1,43 +1,48 @@
-import React, {useState} from 'react';
-import '../css/style.css'; // Import your stylesheet
+import React, { useState } from 'react';
+import '../css/style.css'; // Make sure this path is correct
 
 const imagesContext = require.context('../gallery', false, /\.(bmp|jpg|jpeg)$/);
 
 const images = imagesContext.keys().map((item) => ({
-    src: imagesContext(item), // Use .default for ES modules
-    alt: item.replace('./', '').replace(/\.(bmp|jpg|jpeg)$/, ''),
-  }));
-  
-  function Gallery( {menuOpen}) {
+  src: imagesContext(item),
+  alt: item.replace('./', '').replace(/\.(bmp|jpg|jpeg)$/, ''),
+}));
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1 + images.length) % images.length);
-    };
+function Gallery({ menuOpen }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [transition, setTransition] = useState(false);
 
-    const prevImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    }
+  const changeImage = (next) => {
+    setTransition(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => {
+        const newIndex = next ? (prevIndex + 1) % images.length : (prevIndex - 1 + images.length) % images.length;
+        return newIndex;
+      });
+      setTransition(false);
+    }, 200); // Match this timeout to your CSS transition duration
+  };
 
-
-    return (
-    <>
-
+  return (
     <div className={`main-content ${menuOpen ? 'show-menu' : ''}`}>
-    <div className="gallery-intro">
-    <h2> Check out some of our products:</h2>
-    </div>
-        <div className="gallery">
-          <div className="gallery-item">
-            <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
-          </div>
-          <button onClick={prevImage}>Previous</button>
-        <button onClick={nextImage}>Next</button>
+      <div className="gallery-intro">
+        <h3>Check out some of our products</h3>
+        <p>
+                        SunPro Marine, Inc. brings over 17 years of experience in the luxury marine sector, CIC has mastered 
+                        the art of blending high-seas precision with the warmth and functionality of home interiors.
+                        Our portfolio spans innovative modern kitchen cabinets, vanities, and closets, each
+                        designed with an eye for timeless elegance and durability.
+                    </p>
+      </div>
+      <div className="gallery-container">
+        <button className="gallery-button left" onClick={() => changeImage(false)}>&lt;</button>
+        <div className={`gallery-item ${transition ? 'fade' : ''}`}>
+          <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
+        </div>
+        <button className="gallery-button right" onClick={() => changeImage(true)}>&gt;</button>
       </div>
     </div>
-     </>
-    );
-  }
+  );
+}
 
-  export default Gallery;
+export default Gallery;

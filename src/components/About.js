@@ -42,7 +42,7 @@ function About( {menuOpen, videoUrl}) {
                 </div>
             </div>
 
-            <div className="about-image-container middle">
+<div className="about-image-container middle">
                   <img className="about-img" src={splashImage} alt="About Custom Italian Cabinets" />
                   <div className="overlay-text">About Custom Italian Cabinets</div>
                 </div>

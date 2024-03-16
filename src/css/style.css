@@ -552,6 +552,45 @@ a {
         margin-left: 20px; 
         margin-right: 20px;
     }
+    .map-container { 
+        margin: 0 auto; /* Centers the container */
+    }
+    
+    .gallery-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+    
+      .gallery-item {
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image container */
+      }
+    
+      .gallery-item img {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Adjust height automatically */
+      }
+    
+      .arrow {
+        font-size: 20px; /* Adjust arrow size */
+        width: 40px; /* Adjust arrow size */
+        height: 40px; /* Adjust arrow size */
+      }
+    
+      .arrow.left, .arrow.right {
+        position: relative; /* Move arrows below the image */
+        margin: 10px auto; /* Center arrows horizontally */
+      }
+    
+      .arrow.left {
+        left: 0; /* Reset left positioning */
+      }
+    
+      .arrow.right {
+        right: 0; /* Reset right positioning */
+      }
+    
         
 }
 
@@ -594,7 +633,11 @@ html, body {
     overflow: hidden;
     position: relative;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 2000px;
 }
+
 
 .about-image-container.middle {
     max-height: 700px;
@@ -638,20 +681,28 @@ html, body {
 
 }
 
-.form {
-    color: black;
-}
-/* .nav-links.show {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease;
-} */
 
 .gallery-intro {
     background-color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 2000px;
+    margin-bottom: 50px;
+    padding: 50px 0;
+
 }
 
+.gallery-intro h3 {
+    font-weight: 200;
+}
+
+.gallery-intro p {
+    font-size: 24px;
+    padding: 20px;
+    background-color: #5a7f9a;
+    width: 80%;
+}
 
 .gallery {
     display: grid;
@@ -674,7 +725,7 @@ html, body {
 
 /* General form styling */
 .form {
-    max-width: 600px;
+    max-width: 800px;
     min-width: 500px;
     background-color: #ffffff;
     padding: 20px;
@@ -683,6 +734,7 @@ html, body {
     margin: 20px 0;
     max-height: 800px;
     color: #333;
+    flex: 1;
 }
 
 .form label {
@@ -693,6 +745,7 @@ html, body {
 
 .form input[type="text"],
 .form input[type="email"],
+.form input[type="tel"],
 .form textarea {
     width: 90%;
     padding: 10px;
@@ -730,16 +783,19 @@ html, body {
     background-color: #e5e7eb;
     width: 100%;
     max-width: 2000px;
+
 }
 
 /* Contact information styling */
 .contact-section {
+    min-width: 500px;
+    max-width: 800px;
     background-color: #f1f0ee;
-    padding: 40px;
+    padding: 20px;
     border-radius: 8px;
     margin: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-padding-right: 0;
+    flex: 1;
 }
 
 .contact-section h2,
@@ -776,3 +832,100 @@ padding-right: 0;
     }
 
 }
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    /* For different aspect ratios, adjust the percentage accordingly. */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-item {
+    transition: opacity 0.5s ease-in-out; /* Adjust timing as necessary */
+    opacity: 1;
+  }
+  
+  .gallery-item.fade {
+    opacity: 0;
+  }
+  
+  /* Navigation buttons styling */
+  .gallery-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #6b91c1;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  gallery-button:hover {
+    background-color: #5a7f9a;
+  }
+  
+  .gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .gallery-item {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    width: 600px; /* Static size */
+    height: 400px; /* Static size */
+    border: 4px solid #6b91c1; /* Nice border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .gallery-button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: #6b91c1;
+    color: white;
+    font-size: 24px; /* Adjust as needed */
+    border-radius: 50%;
+    width: 50px; /* Circular shape */
+    height: 50px; /* Circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery-button.left {
+    position: absolute;
+    left: -60px; /* Adjust distance from the image */
+  }
+  
+  .gallery-button.right {
+    position: absolute;
+    right: -60px; /* Adjust distance from the image */
+  }
+  
+  /* Add transitions and hover effects for arrows if needed */
+  .gallery-button:hover {
+    background-color: #5a7f9a;
+  }
+  
