@@ -29,7 +29,7 @@ const oauth2Client = new OAuth2(
 );
 
 oauth2Client.setCredentials({
-    refresh_token: '1//04QJaJ1wpq5rXCgYIARAAGAQSNwF-L9IrMxDrkBEvsTQ31spX-a-1ZorvDLLiBVnAPg6sIciFu6nr97TTBfaYqkU3hWBAF0vzxnQ'
+    refresh_token: '1//041MEkT0LngMSCgYIARAAGAQSNwF-L9Irf2xSETdkIL0uzf8VcgENCt9qHy2F2xYZa1fH9A8fo1f_XPdBeCqraowafB8t5Oq_c6g'
   });
 
 const accessToken = oauth2Client.getAccessToken();
@@ -41,7 +41,7 @@ const transporter = nodemailer.createTransport({
     user: 'allyomega@gmail.com',
     clientId: '671406010293-r2t1121a3eeofdqjc2bc6v9118rdq75l.apps.googleusercontent.com',
     clientSecret: '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',
-    refreshToken: '1//04QJaJ1wpq5rXCgYIARAAGAQSNwF-L9IrMxDrkBEvsTQ31spX-a-1ZorvDLLiBVnAPg6sIciFu6nr97TTBfaYqkU3hWBAF0vzxnQ',
+    refreshToken: '1//041MEkT0LngMSCgYIARAAGAQSNwF-L9Irf2xSETdkIL0uzf8VcgENCt9qHy2F2xYZa1fH9A8fo1f_XPdBeCqraowafB8t5Oq_c6g',
     accessToken: accessToken,
   },
 });

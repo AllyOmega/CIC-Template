@@ -42,7 +42,7 @@ main {
     padding-top: 20px;
     background-color: #f1f0ee;
     gap: 30px;
-    max-width: 2000px;
+    max-width: 2500px;
     align-self: center;
     width: 100%;
 }
@@ -59,7 +59,7 @@ main {
     align-content: center;
     width: 100%;
 
-    max-width: 2000px;
+    max-width: 2500px;
 
 }
 
@@ -212,7 +212,7 @@ main {
     align-items: center;
     width: 85%;
     margin:  40px 40px 0px 40px;
-    max-width: 2000px;
+    max-width: 2500px;
 }
 
 
@@ -250,6 +250,7 @@ main {
     display: flex;
     justify-content: center;
     align-self: center;
+    min-height: 400px;
 }
 
 
@@ -259,6 +260,9 @@ main {
     align-items: center;
     padding: 50px;
     gap: 100px;
+    justify-content: center;
+    margin: 0px 80px;
+
 }
 
 .action-content div{
@@ -303,7 +307,7 @@ main {
     padding: 50px;
     text-align: center;
     font-size: 18px;
-    max-width: 2000px;
+    max-width: 2500px;
     width: 100%;
     align-self: center;
     padding: 50px 0;
@@ -368,7 +372,7 @@ a {
 .video-overlay {
     position: relative;
     width: 100%;
-    max-width: 2000px;
+    max-width: 2500px;
     height: 800px;
     align-self: center;
     overflow: hidden;
@@ -555,43 +559,20 @@ a {
     .map-container { 
         margin: 0 auto; /* Centers the container */
     }
+    body .image-gallery {
+        width: 100%;
+        height: 400px;
+    }
     
-    .gallery-container {
-        flex-direction: column;
-        padding: 20px;
-      }
-    
-      .gallery-item {
-        width: 100%; /* Full width */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 auto; /* Center the image container */
-      }
-    
-      .gallery-item img {
-        width: 100%; /* Make the image responsive */
-        height: auto; /* Adjust height automatically */
-      }
-    
-      .arrow {
-        font-size: 20px; /* Adjust arrow size */
-        width: 40px; /* Adjust arrow size */
-        height: 40px; /* Adjust arrow size */
-      }
-    
-      .arrow.left, .arrow.right {
-        position: relative; /* Move arrows below the image */
-        margin: 10px auto; /* Center arrows horizontally */
-      }
-    
-      .arrow.left {
-        left: 0; /* Reset left positioning */
-      }
-    
-      .arrow.right {
-        right: 0; /* Reset right positioning */
-      }
-    
-        
+    body .image-gallery-slide img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .fullscreen .image-gallery-slide img{
+        height: 80vh;
+        }
+
 }
 
 @media (max-width: 360px)    {
@@ -635,14 +616,14 @@ html, body {
     text-align: center;
     align-items: center;
     justify-content: center;
-    max-width: 2000px;
+    max-width: 2500px;
 }
 
 
 .about-image-container.middle {
     max-height: 700px;
-    margin: 50px 50px;
-    max-width: 2000px;
+    margin: 80px 50px;
+    max-width: 2500px;
     align-self: center;
 }
 
@@ -686,42 +667,29 @@ html, body {
     background-color: #1f2937;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 2000px;
+    max-width: 2500px;
     margin-bottom: 50px;
-    padding: 50px 0;
 
 }
 
 .gallery-intro h3 {
+    padding: 0px 50px;
     font-weight: 200;
+    align-self: center;
 }
 
 .gallery-intro p {
     font-size: 24px;
-    padding: 20px;
+    padding: 50px;
     background-color: #5a7f9a;
-    width: 80%;
+    width: 100%;
+    margin: 0;
+    align-self: center;
+    box-sizing: border-box;
+    
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    padding: 16px;
-    background-color: white;
-  }
 
-  
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Adjust based on preference */
-  }
-
-  .gallery-intro {
-    width: 100%;
-  }
 
 /* General form styling */
 .form {
@@ -782,7 +750,7 @@ html, body {
     justify-content: center;
     background-color: #e5e7eb;
     width: 100%;
-    max-width: 2000px;
+    max-width: 2500px;
 
 }
 
@@ -831,6 +799,8 @@ html, body {
         min-width: 0;
     }
 
+
+
 }
 
 .map-container {
@@ -848,84 +818,15 @@ html, body {
     height: 100%;
 }
 
-.gallery-item {
-    transition: opacity 0.5s ease-in-out; /* Adjust timing as necessary */
-    opacity: 1;
-  }
-  
-  .gallery-item.fade {
-    opacity: 0;
-  }
-  
-  /* Navigation buttons styling */
-  .gallery-button {
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    background-color: #6b91c1;
-    color: white;
-    border-radius: 5px;
-  }
-  
-  gallery-button:hover {
-    background-color: #5a7f9a;
-  }
-  
-  .gallery-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .gallery-item {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
-    width: 600px; /* Static size */
-    height: 400px; /* Static size */
-    border: 4px solid #6b91c1; /* Nice border */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .gallery-item img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-  
-  .gallery-button {
-    cursor: pointer;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    background-color: #6b91c1;
-    color: white;
-    font-size: 24px; /* Adjust as needed */
-    border-radius: 50%;
-    width: 50px; /* Circular shape */
-    height: 50px; /* Circular shape */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .gallery-button.left {
-    position: absolute;
-    left: -60px; /* Adjust distance from the image */
-  }
-  
-  .gallery-button.right {
-    position: absolute;
-    right: -60px; /* Adjust distance from the image */
-  }
-  
-  /* Add transitions and hover effects for arrows if needed */
-  .gallery-button:hover {
-    background-color: #5a7f9a;
-  }
-  
+.image-gallery {
+    width: 50%;
+}
+
+.image-gallery-slide img {
+    width: 50%;
+    height: 600px;
+}
+
+.fullscreen .image-gallery-slide img{
+    height: 85vh;
+    }

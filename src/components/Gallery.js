@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import '../css/style.css'; // Make sure this path is correct
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const imagesContext = require.context('../gallery', false, /\.(bmp|jpg|jpeg)$/);
 
 const images = imagesContext.keys().map((item) => ({
-  src: imagesContext(item),
-  alt: item.replace('./', '').replace(/\.(bmp|jpg|jpeg)$/, ''),
+  original: imagesContext(item),
+  thumbnail: imagesContext(item)
 }));
 
 function Gallery({ menuOpen }) {
@@ -34,13 +36,14 @@ function Gallery({ menuOpen }) {
                         designed with an eye for timeless elegance and durability.
                     </p>
       </div>
-      <div className="gallery-container">
+      {/* <div className="gallery-container">
         <button className="gallery-button left" onClick={() => changeImage(false)}>&lt;</button>
         <div className={`gallery-item ${transition ? 'fade' : ''}`}>
           <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
         </div>
         <button className="gallery-button right" onClick={() => changeImage(true)}>&gt;</button>
-      </div>
+      </div> */}
+      <ImageGallery items={images} />
     </div>
   );
 }
